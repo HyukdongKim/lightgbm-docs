@@ -6,7 +6,7 @@
 파라미터
 ==========
 
-이 페이지에는 LightGBM의 모든 파라미터에 대한 설명이 포함되어 있습니다.
+이 페이지는 LightGBM의 모든 파라미터에 대한 설명을 다룹니다.
 
 **기타 유용한 링크 목록**
 
@@ -21,14 +21,14 @@
 파라미터 형식
 -----------------
 
-파라미터 형식은 ``key1=value1 key2=value2 ...``와 같습니다.
+파라미터를 지정하기 위해 ``key1=value1 key2=value2 ...`` 형식을 사용합니다.
 설정 파일 또는 커맨드 라인으로 파라미터를 설정할 수 있습니다.
-커맨드 라인을 사용하는 경우, ``=``의 앞뒤로 공백을 허용하지 않습니다.
-설정 파일을 사용하는 경우, 하나의 라인에 하나의 파라미터만 허용합니다. ``#``을 활용해 주석을 달 수 있습니다.
+커맨드 라인을 사용하는 경우, ``=`` 의 앞뒤로 공백을 허용하지 않습니다.
+설정 파일을 사용하는 경우, 하나의 라인에 하나의 파라미터만 허용합니다. ``#`` 을 활용해 주석을 달 수 있습니다.
 
 만약 특정 파라미터가 커맨드 라인과 설정 파일에 모두 등장할 경우, LightGBM은 커맨드 라인의 파라미터를 우선합니다.
 
-Python 및 R 패키지의 경우, 해당 언어의 기본 배열 타입(대개 ``multi-int`` 또는 ``multi-double``와 같은 ``multi-xxx`` 형태)을 파라미터로 받습니다.
+Python 및 R 패키지의 경우, 해당 언어의 기본 배열 타입(대개 ``multi-int`` 또는 ``multi-double`` 와 같은 ``multi-xxx`` 형태)을 파라미터로 받습니다.
 예를 들어, ``monotone_constraints`` 파라미터를 다음과 같이 설정할 수 있습니다.
 
 **Python**
@@ -57,31 +57,31 @@ Python 및 R 패키지의 경우, 해당 언어의 기본 배열 타입(대개 `
 
    -  설정 파일의 경로
 
-   -  **참고**: CLI 버전에서만 사용가능합니다
+   -  **참고**: CLI 버전에서만 사용가능합니다.
 
 -  ``task`` :raw-html:`<a id="task" title="Permalink to this parameter" href="#task">&#x1F517;&#xFE0E;</a>`, 기본값 = ``train``, 타입 = 열거형, 옵션: ``train``, ``predict``, ``convert_model``, ``refit``, 별칭: ``task_type``
 
-   -  ``train``은 학습에 사용됩니다. 별칭: ``training``.
+   -  ``train`` 은 학습에 사용됩니다. 별칭: ``training``.
 
-   -  ``predict``은 예측에 사용됩니다. 별칭: ``prediction``, ``test``.
+   -  ``predict`` 은 예측에 사용됩니다. 별칭: ``prediction``, ``test``.
 
-   -  ``convert_model``은 모델을 if-else 형태로 변환합니다. 자세한 정보는 `변환 파라미터 <#convert-parameters>`__에서 확인하세요.
+   -  ``convert_model`` 은 모델을 if-else 형태로 변환합니다. 자세한 정보는 `변환 파라미터 <#convert-parameters>`__ 에서 확인하세요.
 
-   -  ``refit``은 기존의 모델을 새로운 데이터에 재학습할 때 사용합니다. 별칭: ``refit_tree``.
+   -  ``refit`` 은 기존의 모델을 새로운 데이터에 재학습할 때 사용합니다. 별칭: ``refit_tree``.
 
-   -  ``save_binary``은 학습 (및 검증) 데이터를 불러와 binary 형태로 저장합니다. 일반적인 사용법: ``save_binary``를 먼저 사용한 후, 저장된 binary 파일을 활용해 여러 개의 ``train`` 작업을 병렬로 실행합니다.
+   -  ``save_binary`` 은 학습 (및 검증) 데이터를 불러와 바이너리(binary) 형태로 저장합니다. 일반적인 사용법: ``save_binary`` 를 먼저 사용한 후, 저장된 바이너리 파일을 활용해 여러 개의 ``train`` 작업을 병렬로 실행합니다.
 
-   -  **참고**: CLI 버전에서만 사용가능합니다. 각 언어별 패키지가 제공하는 동일한 함수를 사용할 수도 있습니다.
+   -  **참고**: CLI 버전에서만 사용 가능합니다. 각 언어별 패키지가 제공하는 동일한 기능의 함수를 사용할 수도 있습니다.
 
 -  ``objective`` :raw-html:`<a id="objective" title="Permalink to this parameter" href="#objective">&#x1F517;&#xFE0E;</a>`, 기본값 = ``regression``, 타입 = 열거형, 옵션: ``regression``, ``regression_l1``, ``huber``, ``fair``, ``poisson``, ``quantile``, ``mape``, ``gamma``, ``tweedie``, ``binary``, ``multiclass``, ``multiclassova``, ``cross_entropy``, ``cross_entropy_lambda``, ``lambdarank``, ``rank_xendcg``, 별칭: ``objective_type``, ``app``, ``application``, ``loss``
 
-   -  회귀에서의 응용
+   -  회귀에서의 활용
 
       -  ``regression``, L2 loss, 별칭: ``regression_l2``, ``l2``, ``mean_squared_error``, ``mse``, ``l2_root``, ``root_mean_squared_error``, ``rmse``
 
       -  ``regression_l1``, L1 loss, 별칭: ``l1``, ``mean_absolute_error``, ``mae``
 
-      -  ``huber``, `후버 손실(Huber loss) <https://en.wikipedia.org/wiki/Huber_loss>`__
+      -  ``huber``, `후버 손실(Huber Loss) <https://en.wikipedia.org/wiki/Huber_loss>`__
 
       -  ``fair``, `공정 손실(Fair Loss) <https://www.kaggle.com/c/allstate-claims-severity/discussion/24520>`__
 
@@ -91,312 +91,312 @@ Python 및 R 패키지의 경우, 해당 언어의 기본 배열 타입(대개 `
 
       -  ``mape``, `평균 절대 비율 오차 손실(MAPE loss) <https://en.wikipedia.org/wiki/Mean_absolute_percentage_error>`__, 별칭: ``mean_absolute_percentage_error``
 
-      -  ``gamma``는 로그 링크(Log-link)를 활용한 감마 회귀(Gamma Regression)에 사용됩니다. 보험 청구의 심도(Severity) 혹은 `감마 분포 <https://en.wikipedia.org/wiki/Gamma_distribution#Occurrence_and_applications>`__를 따르는 대상을 모델링할 때 유용합니다.
+      -  ``gamma`` 는 로그 링크(Log-link)를 활용한 감마 회귀(Gamma Regression)에 사용됩니다. 보험 청구의 심도(Severity) 혹은 `감마 분포 <https://en.wikipedia.org/wiki/Gamma_distribution#Occurrence_and_applications>`__ 를 따르는 대상을 모델링할 때 유용합니다.
 
-      -  ``tweedie``는 로그 링크(Log-link)를 활용한 트위디 회귀(Tweedie Regression)에 사용됩니다. 보험에서의 전손(Total Loss) 혹은 `트위디 분포 <https://en.wikipedia.org/wiki/Tweedie_distribution#Occurrence_and_applications>`__를 따르는 대상을 모델링할 때 유용합니다.
+      -  ``tweedie`` 는 로그 링크(Log-link)를 활용한 트위디 회귀(Tweedie Regression)에 사용됩니다. 보험에서의 전손(Total Loss) 혹은 `트위디 분포 <https://en.wikipedia.org/wiki/Tweedie_distribution#Occurrence_and_applications>`__ 를 따르는 대상을 모델링할 때 유용합니다.
 
-   -  이진 분류에서의 응용
+   -  이진(Binary) 분류에서의 활용
 
-      -  ``binary``는 이진 `로그 손실(log loss) <https://en.wikipedia.org/wiki/Cross_entropy>`__ 분류 (또는 로지스틱 회귀(Logistic Regression))에 사용됩니다.
+      -  ``binary`` 는 이진 `로그 손실(Log Loss) <https://en.wikipedia.org/wiki/Cross_entropy>`__ 분류 (또는 로지스틱 회귀(Logistic Regression))에 사용됩니다.
 
-      -  requires labels in {0, 1}; see ``cross-entropy`` application for general probability labels in [0, 1]
+      -  0 또는 1의 라벨이 필요합니다. 0과 1 사이의 확률 라벨을 활용하는 ``cross-entropy`` 에서의 응용을 참고하세요.
 
-   -  multi-class classification application
+   -  다중(Multi-class) 분류에서의 활용
 
-      -  ``multiclass``, `softmax <https://en.wikipedia.org/wiki/Softmax_function>`__ objective function, 별칭: ``softmax``
+      -  ``multiclass``, 목적 함수 `softmax <https://en.wikipedia.org/wiki/Softmax_function>`__ 을 활용합니다. 별칭: ``softmax``
 
-      -  ``multiclassova``, `One-vs-All <https://en.wikipedia.org/wiki/Multiclass_classification#One-vs.-rest>`__ binary objective function, 별칭: ``multiclass_ova``, ``ova``, ``ovr``
+      -  ``multiclassova``, `One-vs-All <https://en.wikipedia.org/wiki/Multiclass_classification#One-vs.-rest>`__ 이진(Binary) 목적 함수, 별칭: ``multiclass_ova``, ``ova``, ``ovr``
 
       -  ``num_class`` should be set as well
 
-   -  cross-entropy application
+   -  교차 엔트로피(Cross Entropy)의 활용
 
-      -  ``cross_entropy``, objective function for cross-entropy (with optional linear weights), 별칭: ``xentropy``
+      -  ``cross_entropy``, 교차 엔트로피에 대한 목적 함수 (선형 가중치 옵션 포함), 별칭: ``xentropy``
 
-      -  ``cross_entropy_lambda``, alternative parameterization of cross-entropy, 별칭: ``xentlambda``
+      -  ``cross_entropy_lambda``, 교차 엔트로피를 대체하는 재매개변수화(reparametrization), 별칭: ``xentlambda``
 
-      -  label is anything in interval [0, 1]
+      -  라벨은 0과 1사이의 값을 가집니다.
 
-   -  ranking application
+   -  순위 예측에서의 응용
 
-      -  ``lambdarank``, `lambdarank <https://papers.nips.cc/paper/2971-learning-to-rank-with-nonsmooth-cost-functions.pdf>`__ objective. `label_gain <#label_gain>`__ can be used to set the gain (weight) of ``int`` label and all values in ``label`` must be smaller than number of elements in ``label_gain``
+      -  ``lambdarank``, `lambdarank <https://papers.nips.cc/paper/2971-learning-to-rank-with-nonsmooth-cost-functions.pdf>`__ 목적 함수. `label_gain <#label_gain>`__ 을 사용하여 ``int`` 라벨의 gain(가중치)를 설정할 수 있으며, ``label`` 의 모든 값은 ``label_gain`` 의 개수 보다 적어야합니다.
 
-      -  ``rank_xendcg``, `XE_NDCG_MART <https://arxiv.org/abs/1911.09798>`__ ranking objective function, 별칭: ``xendcg``, ``xe_ndcg``, ``xe_ndcg_mart``, ``xendcg_mart``
+      -  ``rank_xendcg``, `XE_NDCG_MART <https://arxiv.org/abs/1911.09798>`__ 랭킹 목적 함수, 별칭: ``xendcg``, ``xe_ndcg``, ``xe_ndcg_mart``, ``xendcg_mart``
 
-      -  ``rank_xendcg`` is faster than and achieves the similar performance as ``lambdarank``
+      -  ``rank_xendcg`` 는 ``lambdarank`` 보다 빠르면서도 비슷한 수준의 성능을 보입니다.
 
-      -  label should be ``int`` type, and larger number represents the higher relevance (e.g. 0:bad, 1:fair, 2:good, 3:perfect)
+      -  라벨은 ``int`` 타입만 허용합니다. 큰 숫자는 높은 순위를 의미합니다. (예: 0:나쁨, 1:보통, 2:좋음, 3:완벽)
 
 -  ``boosting`` :raw-html:`<a id="boosting" title="Permalink to this parameter" href="#boosting">&#x1F517;&#xFE0E;</a>`, 기본값 = ``gbdt``, 타입 = 열거형, 옵션: ``gbdt``, ``rf``, ``dart``, ``goss``, 별칭: ``boosting_type``, ``boost``
 
-   -  ``gbdt``, traditional Gradient Boosting Decision Tree, 별칭: ``gbrt``
+   -  ``gbdt``, 기존의 그라디언트 부스팅 의사 결정 나무(Gradient Boosting Decision Tree), 별칭: ``gbrt``
 
-   -  ``rf``, Random Forest, 별칭: ``random_forest``
+   -  ``rf``, 랜덤 포레스트(Random Forest), 별칭: ``random_forest``
 
    -  ``dart``, `Dropouts meet Multiple Additive Regression Trees <https://arxiv.org/abs/1505.01866>`__
 
-   -  ``goss``, Gradient-based One-Side Sampling
+   -  ``goss``, 경사 기반 단측 샘플링(Gradient-based One-Side Sampling)
 
-      -  **참고**: internally, LightGBM uses ``gbdt`` mode for the first ``1 / learning_rate`` iterations
+      -  **참고**: LightGBM은 첫 ``1 / learning_rate`` 회의 반복동안 ``gbdt`` 모드를 사용합니다.
 
 -  ``data`` :raw-html:`<a id="data" title="Permalink to this parameter" href="#data">&#x1F517;&#xFE0E;</a>`, 기본값 = ``""``, 타입 = 문자열, 별칭: ``train``, ``train_data``, ``train_data_file``, ``data_filename``
 
-   -  path of training data, LightGBM will train from this data
+   -  학습 데이터의 경로를 지정하면, LightGBM은 해당 경로의 데이터로 학습합니다.
 
-   -  **참고**: can be used only in CLI version
+   -  **참고**: CLI 버전에서만 사용 가능합니다.
 
 -  ``valid`` :raw-html:`<a id="valid" title="Permalink to this parameter" href="#valid">&#x1F517;&#xFE0E;</a>`, 기본값 = ``""``, 타입 = 문자열, 별칭: ``test``, ``valid_data``, ``valid_data_file``, ``test_data``, ``test_data_file``, ``valid_filenames``
 
-   -  path(s) of validation/test data, LightGBM will output metrics for these data
+   -  검증/테스트 데이터의 경로를 지정하면 LightGBM이 평가지표(Metric)에 기반하여 해당 데이터에 대한 결과를 출력합니다.
 
-   -  support multiple validation data, separated by ``,``
+   -  ``,`` 를 활용하여 여러 개의 검증 데이터를 사용할 수 있습니다.
 
-   -  **참고**: can be used only in CLI version
+   -  **참고**: CLI 버전에서만 사용 가능합니다.
 
--  ``num_iterations`` :raw-html:`<a id="num_iterations" title="Permalink to this parameter" href="#num_iterations">&#x1F517;&#xFE0E;</a>`, 기본값 = ``100``, 타입 = int, 별칭: ``num_iteration``, ``n_iter``, ``num_tree``, ``num_trees``, ``num_round``, ``num_rounds``, ``num_boost_round``, ``n_estimators``, ``max_iter``, constraints: ``num_iterations >= 0``
+-  ``num_iterations`` :raw-html:`<a id="num_iterations" title="Permalink to this parameter" href="#num_iterations">&#x1F517;&#xFE0E;</a>`, 기본값 = ``100``, 타입 = 정수형, 별칭: ``num_iteration``, ``n_iter``, ``num_tree``, ``num_trees``, ``num_round``, ``num_rounds``, ``num_boost_round``, ``n_estimators``, ``max_iter``, 제약 조건: ``num_iterations >= 0``
 
-   -  number of boosting iterations
+   -  부스팅 반복 횟수
 
-   -  **참고**: internally, LightGBM constructs ``num_class * num_iterations`` trees for multi-class classification problems
+   -  **참고**: LightGBM은 다중 분류 문제에서 ``num_class * num_iterations`` 개의 트리를 만듭니다.
 
--  ``learning_rate`` :raw-html:`<a id="learning_rate" title="Permalink to this parameter" href="#learning_rate">&#x1F517;&#xFE0E;</a>`, 기본값 = ``0.1``, 타입 = double, 별칭: ``shrinkage_rate``, ``eta``, constraints: ``learning_rate > 0.0``
+-  ``learning_rate`` :raw-html:`<a id="learning_rate" title="Permalink to this parameter" href="#learning_rate">&#x1F517;&#xFE0E;</a>`, 기본값 = ``0.1``, 타입 = 부동 소숫점(double), 별칭: ``shrinkage_rate``, ``eta``, 제약 조건: ``learning_rate > 0.0``
 
-   -  shrinkage rate
+   -  수축률(Shrinkage Rate)
 
-   -  in ``dart``, it also affects on normalization weights of dropped trees
+   -  ``dart`` 옵션을 설정할 경우,  ``learning_rate`` 는 제거된 트리(dropped trees)의 정규화 가중치(normalization weights)에도 영향을 미칩니다.
 
--  ``num_leaves`` :raw-html:`<a id="num_leaves" title="Permalink to this parameter" href="#num_leaves">&#x1F517;&#xFE0E;</a>`, 기본값 = ``31``, 타입 = int, 별칭: ``num_leaf``, ``max_leaves``, ``max_leaf``, ``max_leaf_nodes``, constraints: ``1 < num_leaves <= 131072``
+-  ``num_leaves`` :raw-html:`<a id="num_leaves" title="Permalink to this parameter" href="#num_leaves">&#x1F517;&#xFE0E;</a>`, 기본값 = ``31``, 타입 = 정수형, 별칭: ``num_leaf``, ``max_leaves``, ``max_leaf``, ``max_leaf_nodes``, 제약 조건: ``1 < num_leaves <= 131072``
 
-   -  max number of leaves in one tree
+   -  한 트리의 최대 리프 노드(leaf node)의 개수
 
 -  ``tree_learner`` :raw-html:`<a id="tree_learner" title="Permalink to this parameter" href="#tree_learner">&#x1F517;&#xFE0E;</a>`, 기본값 = ``serial``, 타입 = 열거형, 옵션: ``serial``, ``feature``, ``data``, ``voting``, 별칭: ``tree``, ``tree_type``, ``tree_learner_type``
 
-   -  ``serial``, single machine tree learner
+   -  ``serial``, 단일 머신 트리 학습기(Single Machine Tree Learner)
 
-   -  ``feature``, feature parallel tree learner, 별칭: ``feature_parallel``
+   -  ``feature``, 변수 기반의 병렬 트리 학습기(Feature Parallel Tree Learner), 별칭: ``feature_parallel``
 
-   -  ``data``, data parallel tree learner, 별칭: ``data_parallel``
+   -  ``data``, 데이터 기반의 병렬 트리 학습기(Data Parallel Tree Learner), 별칭: ``data_parallel``
 
-   -  ``voting``, voting parallel tree learner, 별칭: ``voting_parallel``
+   -  ``voting``, 투표 기반의 병렬 트리 학습기(Voting Parallel Tree Learner), 별칭: ``voting_parallel``
 
-   -  refer to `Distributed Learning Guide <./Parallel-Learning-Guide.rst>`__ to get more details
+   -  자세한 내용은 `Distributed Learning Guide <./Parallel-Learning-Guide.rst>`__ 을 참고하세요.
 
--  ``num_threads`` :raw-html:`<a id="num_threads" title="Permalink to this parameter" href="#num_threads">&#x1F517;&#xFE0E;</a>`, 기본값 = ``0``, 타입 = int, 별칭: ``num_thread``, ``nthread``, ``nthreads``, ``n_jobs``
+-  ``num_threads`` :raw-html:`<a id="num_threads" title="Permalink to this parameter" href="#num_threads">&#x1F517;&#xFE0E;</a>`, 기본값 = ``0``, 타입 = 정수형, 별칭: ``num_thread``, ``nthread``, ``nthreads``, ``n_jobs``
 
-   -  number of threads for LightGBM
+   -  LightGBM에 사용되는 스레드 수
 
-   -  ``0`` means default number of threads in OpenMP
+   -  ``0`` 은 OpenMP의 기본 스레드 수를 의미합니다.
 
-   -  for the best speed, set this to the number of **real CPU cores**, not the number of threads (most CPUs use `hyper-threading <https://en.wikipedia.org/wiki/Hyper-threading>`__ to generate 2 threads per CPU core)
+   -  최상의 속도를 위해, 스레드 수가 아닌 **실제 CPU 코어 수** 로 설정하십시오. (대부분의 CPU는 `하이퍼 스레딩 <https://en.wikipedia.org/wiki/Hyper-threading>`__ 을 활용해 CPU 코어당 2개의 스레드를 만듭니다.)
 
-   -  do not set it too large if your dataset is small (for instance, do not use 64 threads for a dataset with 10,000 rows)
+   -  데이터셋이 작을 경우 너무 큰 값을 설정하지 마십시오. (예를 들어, 10,000개의 행이 있는 데이터셋에 64개의 스레드를 사용하지 마십시오.)
 
-   -  be aware a task manager or any similar CPU monitoring tool might report that cores not being fully utilized. **This is normal**
+   -  작업 관리자나 CPU 모니터링 도구가 CPU 코어가 완전히 활용되지 않는다고 보고할 수 있습니다. **이는 정상입니다.**
 
-   -  for distributed learning, do not use all CPU cores because this will cause poor performance for the network communication
+   -  분산 학습 시, 네트워크 통신 성능을 저하시키므로 CPU 코어를 모두 사용하지 마십시오.
 
-   -  **참고**: please **don't** change this during training, especially when running multiple jobs simultaneously by external packages, otherwise it may cause undesirable errors
+   -  **참고**: 학습 중에 이 값을 변경하지 **마십시오**. 특히 외부 패키지로 여러 작업을 동시에 실행하는 경우 원치 않는 오류가 발생할 수 있습니다.
 
 -  ``device_type`` :raw-html:`<a id="device_type" title="Permalink to this parameter" href="#device_type">&#x1F517;&#xFE0E;</a>`, 기본값 = ``cpu``, 타입 = 열거형, 옵션: ``cpu``, ``gpu``, ``cuda``, 별칭: ``device``
 
-   -  device for the tree learning, you can use GPU to achieve the faster learning
+   -  트리 학습을 위한 장치 설정, GPU를 사용하여 더 빠르게 학습할 수 있습니다.
 
-   -  **참고**: it is recommended to use the smaller ``max_bin`` (e.g. 63) to get the better speed up
+   -  **참고**: 속도를 높이려면 작은 ``max_bin`` (예: 63)을 사용하는 것이 좋습니다.
 
-   -  **참고**: for the faster speed, GPU uses 32-bit float point to sum up by default, so this may affect the accuracy for some tasks. You can set ``gpu_use_dp=true`` to enable 64-bit float point, but it will slow down the training
+   -  **참고**: 빠른 속도를 위해 GPU는 기본적으로 32비트 부동 소숫점을 사용하여 합산하므로 일부 작업의 정확도에 영향을 줄 수 있습니다. 64비트 부동 소숫점을 사용하도록 ``gpu_use_dp=true`` 를 설정할 수 있지만, 학습 속도가 느려질 것입니다.
 
-   -  **참고**: refer to `Installation Guide <./Installation-Guide.rst#build-gpu-version>`__ to build LightGBM with GPU support
+   -  **참고**: GPU를 지원하는 LightGBM을 빌드하려면 `설치 가이드 <./Installation-Guide.rst#build-gpu-version>`__ 를 참고하세요.
 
--  ``seed`` :raw-html:`<a id="seed" title="Permalink to this parameter" href="#seed">&#x1F517;&#xFE0E;</a>`, 기본값 = ``None``, 타입 = int, 별칭: ``random_seed``, ``random_state``
+-  ``seed`` :raw-html:`<a id="seed" title="Permalink to this parameter" href="#seed">&#x1F517;&#xFE0E;</a>`, 기본값 = ``None``, 타입 = 정수형, 별칭: ``random_seed``, ``random_state``
 
-   -  this seed is used to generate other seeds, e.g. ``data_random_seed``, ``feature_fraction_seed``, etc.
+   -  이 시드(seed)는 다른 시드를 만드는데에 사용됩니다. (예: ``data_random_seed``, ``feature_fraction_seed`` 등)
 
-   -  by default, this seed is unused in favor of default values of other seeds
+   -  기본적으로 이 시드는 다른 시드의 기본값보다 우선하여 사용되지 않습니다.
 
-   -  this seed has lower priority in comparison with other seeds, which means that it will be overridden, if you set other seeds explicitly
+   -  이 시드는 다른 시드보다 우선 순위가 낮으므로, 다른 시드가 명시적으로 설정될 경우 재정의(overiding)됩니다.
 
--  ``deterministic`` :raw-html:`<a id="deterministic" title="Permalink to this parameter" href="#deterministic">&#x1F517;&#xFE0E;</a>`, 기본값 = ``false``, 타입 = bool
+-  ``deterministic`` :raw-html:`<a id="deterministic" title="Permalink to this parameter" href="#deterministic">&#x1F517;&#xFE0E;</a>`, 기본값 = ``false``, 타입 = 부울
 
-   -  used only with ``cpu`` device type
+   -  ``cpu`` 장치 유형에서만 사용됩니다.
 
-   -  setting this to ``true`` should ensure the stable results when using the same data and the same parameters (and different ``num_threads``)
+   -  이를 ``true`` 로 설정하면 동일한 데이터와 동일한 파라미터(와 다른 ``num_threads``)를 사용할 때 안정적인 결과를 얻을 수 있습니다.
 
-   -  when you use the different seeds, different LightGBM versions, the binaries compiled by different compilers, or in different systems, the results are expected to be different
+   -  다른 시드(seed), 다른 버전의 LightGBM, 다른 컴파일러로 컴파일 된 바이너리, 다른 시스템을 사용할 경우, 결과가 달라질 수 있습니다.
 
-   -  you can `raise issues <https://github.com/microsoft/LightGBM/issues>`__ in LightGBM GitHub repo when you meet the unstable results
+   -  불안정한 결과를 발견할 경우 LightGBM 깃허브 레포지토리에서 `문제 제기 <https://github.com/microsoft/LightGBM/issues>`__ 를 할 수 있습니다.
 
-   -  **참고**: setting this to ``true`` may slow down the training
+   -  **참고**: ``true`` 로 설정하면 훈련 속도가 느려질 수 있습니다.
 
-   -  **참고**: to avoid potential instability due to numerical issues, please set ``force_col_wise=true`` or ``force_row_wise=true`` when setting ``deterministic=true``
+   -  **참고**: ``deterministic=true`` 로 설정한 경우, 수치적(numerical) 문제로 인한 잠재적 불안정성을 피하려면 ``force_col_wise=true`` 나 ``force_row_wise=true`` 를 설정하십시오.
 
-Learning Control Parameters
+학습 제어 파라미터
 ---------------------------
 
--  ``force_col_wise`` :raw-html:`<a id="force_col_wise" title="Permalink to this parameter" href="#force_col_wise">&#x1F517;&#xFE0E;</a>`, 기본값 = ``false``, 타입 = bool
+-  ``force_col_wise`` :raw-html:`<a id="force_col_wise" title="Permalink to this parameter" href="#force_col_wise">&#x1F517;&#xFE0E;</a>`, 기본값 = ``false``, 타입 = 부울
 
-   -  used only with ``cpu`` device type
+   -  ``cpu`` 장치 유형에서만 사용됩니다.
 
-   -  set this to ``true`` to force col-wise histogram building
+   -  행 기반의 히스토그램(col-wise histogram)을 강제하려면 이 값을 ``true`` 로 설정하십시오.
 
-   -  enabling this is recommended when:
+   -  다음과 같은 경우에 이 값의 사용을 권합니다.
 
-      -  the number of columns is large, or the total number of bins is large
+      -  컬럼 개수가 많거나, 총 구간(bins)의 개수가 많은 경우
 
-      -  ``num_threads`` is large, e.g. ``> 20``
+      -  ``num_threads`` 가 큰 경우 (예: 20보다 큰 경우)
 
-      -  you want to reduce memory cost
+      -  메모리 비용을 줄이고 싶은 경우
 
-   -  **참고**: when both ``force_col_wise`` and ``force_row_wise`` are ``false``, LightGBM will firstly try them both, and then use the faster one. To remove the overhead of testing set the faster one to ``true`` manually
+   -  **참고**: ``force_col_wise`` 와 ``force_row_wise`` 가 ``false`` 일 경우, LightGBM은 처음에 둘 다 실행하고, 그 후에 더 빠른것을 사용합니다. 테스트 셋의 오버헤드를 제거하려면 더 빠른 것을 직접 ``true`` 로 설정하십시오.
 
-   -  **참고**: this parameter cannot be used at the same time with ``force_row_wise``, choose only one of them
+   -  **참고**: 이 파라미터는 ``force_row_wise`` 와 동시에 사용할 수 없으므로 둘 중 하나만 사용하십시오.
 
--  ``force_row_wise`` :raw-html:`<a id="force_row_wise" title="Permalink to this parameter" href="#force_row_wise">&#x1F517;&#xFE0E;</a>`, 기본값 = ``false``, 타입 = bool
+-  ``force_row_wise`` :raw-html:`<a id="force_row_wise" title="Permalink to this parameter" href="#force_row_wise">&#x1F517;&#xFE0E;</a>`, 기본값 = ``false``, 타입 = 부울
 
-   -  used only with ``cpu`` device type
+   -  ``cpu`` 장치 유형에서만 사용됩니다.
 
-   -  set this to ``true`` to force row-wise histogram building
+   -  열 기반의 히스토그램(row-wise histogram)을 강제하려면 이 값을 ``true`` 로 설정하십시오.
 
-   -  enabling this is recommended when:
+   -  다음과 같은 경우에 이 값의 사용을 권합니다.
 
-      -  the number of data points is large, and the total number of bins is relatively small
+      -  데이터 개수가 많고 총 구간(bins)의 개수가 상대적으로 적은 경우
 
-      -  ``num_threads`` is relatively small, e.g. ``<= 16``
+      -  ``num_threads`` 가 상대적으로 작은 경우 (예: 16보다 작거나 같은 경우)
 
-      -  you want to use small ``bagging_fraction`` or ``goss`` boosting to speed up
+      -  속도를 위해 작은 ``bagging_fraction`` 이나 ``goss`` 부스팅을 사용하고자 하는 경우
 
-   -  **참고**: setting this to ``true`` will double the memory cost for Dataset object. If you have not enough memory, you can try setting ``force_col_wise=true``
+   -  **참고**: 이를 ``true`` 로 설정하면 Dataset 오브젝트의 메모리 비용이 두 배로 증가합니다. 메모리가 충분하지 않은 경우 ``force_col_wise=true`` 를 설정할 수 있습니다.
 
-   -  **참고**: when both ``force_col_wise`` and ``force_row_wise`` are ``false``, LightGBM will firstly try them both, and then use the faster one. To remove the overhead of testing set the faster one to ``true`` manually
+   -  **참고**: ``force_col_wise`` 과 ``force_row_wise`` 가 ``false`` 일 경우, LightGBM은 처음에 둘 다 실행하고, 그 후에 더 빠른것을 사용합니다. 테스트 셋의 오버헤드를 제거하려면 더 빠른 것을 직접 ``true`` 로 설정하십시오.
 
-   -  **참고**: this parameter cannot be used at the same time with ``force_col_wise``, choose only one of them
+   -  **참고**: 이 파라미터는 ``force_col_wise`` 와 동시에 사용할 수 없으므로 둘 중 하나만 사용하십시오.
 
--  ``histogram_pool_size`` :raw-html:`<a id="histogram_pool_size" title="Permalink to this parameter" href="#histogram_pool_size">&#x1F517;&#xFE0E;</a>`, 기본값 = ``-1.0``, 타입 = double, 별칭: ``hist_pool_size``
+-  ``histogram_pool_size`` :raw-html:`<a id="histogram_pool_size" title="Permalink to this parameter" href="#histogram_pool_size">&#x1F517;&#xFE0E;</a>`, 기본값 = ``-1.0``, 타입 = 부동 소숫점(double), 별칭: ``hist_pool_size``
 
-   -  max cache size in MB for historical histogram
+   -  기록 히스토그램(historical histogram)의 최대 캐시 크기 (단위: MB)
 
-   -  ``< 0`` means no limit
+   -  ``< 0`` 은 제한이 없음을 의미합니다.
 
--  ``max_depth`` :raw-html:`<a id="max_depth" title="Permalink to this parameter" href="#max_depth">&#x1F517;&#xFE0E;</a>`, 기본값 = ``-1``, 타입 = int
+-  ``max_depth`` :raw-html:`<a id="max_depth" title="Permalink to this parameter" href="#max_depth">&#x1F517;&#xFE0E;</a>`, 기본값 = ``-1``, 타입 = 정수형
 
-   -  limit the max depth for tree model. This is used to deal with over-fitting when ``#data`` is small. Tree still grows leaf-wise
+   -  트리 모델의 최대 깊이를 제한합니다. 이는 ``#data`` 가 작을 때, 과적합(over-fitting)을 처리하기 위해 사용됩니다. 그럼에도 트리는 리프 방식(leaf-wise)으로 확장합니다.
 
-   -  ``<= 0`` means no limit
+   -  ``<= 0`` 은 제한이 없음을 의미합니다.
 
--  ``min_data_in_leaf`` :raw-html:`<a id="min_data_in_leaf" title="Permalink to this parameter" href="#min_data_in_leaf">&#x1F517;&#xFE0E;</a>`, 기본값 = ``20``, 타입 = int, 별칭: ``min_data_per_leaf``, ``min_data``, ``min_child_samples``, ``min_samples_leaf``, constraints: ``min_data_in_leaf >= 0``
+-  ``min_data_in_leaf`` :raw-html:`<a id="min_data_in_leaf" title="Permalink to this parameter" href="#min_data_in_leaf">&#x1F517;&#xFE0E;</a>`, 기본값 = ``20``, 타입 = 정수형, 별칭: ``min_data_per_leaf``, ``min_data``, ``min_child_samples``, ``min_samples_leaf``, 제약 조건: ``min_data_in_leaf >= 0``
 
-   -  minimal number of data in one leaf. Can be used to deal with over-fitting
+   -  한 리프(leaf)의 최소 데이터 수. 과적합(over-fitting)을 처리하기 위해 사용됩니다.
 
-   -  **참고**: this is an approximation based on the Hessian, so occasionally you may observe splits which produce leaf nodes that have less than this many observations
+   -  **참고**: 이는 헤시안(the Hessian) 기반의 근사치이므로, 때때로 이 값보다 적은 수의 데이터를 갖는 리프 노드를 생성하는 일이 발생할 수 있습니다.
 
--  ``min_sum_hessian_in_leaf`` :raw-html:`<a id="min_sum_hessian_in_leaf" title="Permalink to this parameter" href="#min_sum_hessian_in_leaf">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1e-3``, 타입 = double, 별칭: ``min_sum_hessian_per_leaf``, ``min_sum_hessian``, ``min_hessian``, ``min_child_weight``, constraints: ``min_sum_hessian_in_leaf >= 0.0``
+-  ``min_sum_hessian_in_leaf`` :raw-html:`<a id="min_sum_hessian_in_leaf" title="Permalink to this parameter" href="#min_sum_hessian_in_leaf">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1e-3``, 타입 = 부동 소숫점(double), 별칭: ``min_sum_hessian_per_leaf``, ``min_sum_hessian``, ``min_hessian``, ``min_child_weight``, 제약 조건: ``min_sum_hessian_in_leaf >= 0.0``
 
-   -  minimal sum hessian in one leaf. Like ``min_data_in_leaf``, it can be used to deal with over-fitting
+   -  한 리프(leaf)의 최소 헤시안 합. ``min_data_in_leaf`` 와 동일하게, 과적합(over-fitting)을 처리하기 위해 사용됩니다.
 
--  ``bagging_fraction`` :raw-html:`<a id="bagging_fraction" title="Permalink to this parameter" href="#bagging_fraction">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1.0``, 타입 = double, 별칭: ``sub_row``, ``subsample``, ``bagging``, constraints: ``0.0 < bagging_fraction <= 1.0``
+-  ``bagging_fraction`` :raw-html:`<a id="bagging_fraction" title="Permalink to this parameter" href="#bagging_fraction">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1.0``, 타입 = 부동 소숫점(double), 별칭: ``sub_row``, ``subsample``, ``bagging``, 제약 조건: ``0.0 < bagging_fraction <= 1.0``
 
-   -  like ``feature_fraction``, but this will randomly select part of data without resampling
+   -  ``feature_fraction`` 과 비슷하지만, 리샘플링(resampling) 없이 데이터의 일부를 무작위로 선택합니다.
 
-   -  can be used to speed up training
+   -  학습 속도를 높이기 위해 사용됩니다.
 
-   -  can be used to deal with over-fitting
+   -  과적합(over-fitting)을 방지하기 위해 사용됩니다.
 
-   -  **참고**: to enable bagging, ``bagging_freq`` should be set to a non zero value as well
+   -  **참고**: 배깅(bagging)을 활성화하려면, ``bagging_freq`` 도 0이 아닌 값으로 설정해야합니다.
 
--  ``pos_bagging_fraction`` :raw-html:`<a id="pos_bagging_fraction" title="Permalink to this parameter" href="#pos_bagging_fraction">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1.0``, 타입 = double, 별칭: ``pos_sub_row``, ``pos_subsample``, ``pos_bagging``, constraints: ``0.0 < pos_bagging_fraction <= 1.0``
+-  ``pos_bagging_fraction`` :raw-html:`<a id="pos_bagging_fraction" title="Permalink to this parameter" href="#pos_bagging_fraction">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1.0``, 타입 = 부동 소숫점(double), 별칭: ``pos_sub_row``, ``pos_subsample``, ``pos_bagging``, 제약 조건: ``0.0 < pos_bagging_fraction <= 1.0``
 
-   -  used only in ``binary`` application
+   -  ``binary`` 활용시 사용됩니다.
 
-   -  used for imbalanced binary classification problem, will randomly sample ``#pos_samples * pos_bagging_fraction`` positive samples in bagging
+   -  불균형 데이터 기반의 이진 분류에 사용되는 경우, 배깅(Bagging)을 활용해 ``#pos_samples * pos_bagging_fraction`` 만큼의 양성(positive) 데이터를 무작위로 샘플링할 것입니다.
 
-   -  should be used together with ``neg_bagging_fraction``
+   -  ``neg_bagging_fraction`` 와 함께 사용해야합니다.
 
-   -  set this to ``1.0`` to disable
+   -  비활성화하려면 ``1.0`` 으로 설정하십시오.
 
-   -  **참고**: to enable this, you need to set ``bagging_freq`` and ``neg_bagging_fraction`` as well
+   -  **참고**: 이를 사용하기 위해 ``bagging_freq`` 와 ``neg_bagging_fraction`` 도 설정해야 합니다.
 
-   -  **참고**: if both ``pos_bagging_fraction`` and ``neg_bagging_fraction`` are set to ``1.0``,  balanced bagging is disabled
+   -  **참고**: 만약 ``pos_bagging_fraction`` 와 ``neg_bagging_fraction`` 가 모두 ``1.0`` 으로 설정되면, 균형잡힌 배깅(balanced bagging)은 비활성화됩니다.
 
-   -  **참고**: if balanced bagging is enabled, ``bagging_fraction`` will be ignored
+   -  **참고**: 만약 균형잡힌 배깅이 사용될 경우, ``bagging_fraction`` 은 무시됩니다.
 
--  ``neg_bagging_fraction`` :raw-html:`<a id="neg_bagging_fraction" title="Permalink to this parameter" href="#neg_bagging_fraction">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1.0``, 타입 = double, 별칭: ``neg_sub_row``, ``neg_subsample``, ``neg_bagging``, constraints: ``0.0 < neg_bagging_fraction <= 1.0``
+-  ``neg_bagging_fraction`` :raw-html:`<a id="neg_bagging_fraction" title="Permalink to this parameter" href="#neg_bagging_fraction">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1.0``, 타입 = 부동 소숫점(double), 별칭: ``neg_sub_row``, ``neg_subsample``, ``neg_bagging``, 제약 조건: ``0.0 < neg_bagging_fraction <= 1.0``
 
-   -  used only in ``binary`` application
+   -  ``binary`` 활용시 사용됩니다.
 
-   -  used for imbalanced binary classification problem, will randomly sample ``#neg_samples * neg_bagging_fraction`` negative samples in bagging
+   -  불균형 데이터 기반의 이진 분류에 사용되는 경우, 배깅(Bagging)을 활용해 ``#neg_samples * neg_bagging_fraction`` 만큼의 음성(negative) 데이터를 무작위로 샘플링할 것입니다.
 
-   -  should be used together with ``pos_bagging_fraction``
+   -  ``pos_bagging_fraction`` 와 함께 사용해야합니다.
 
-   -  set this to ``1.0`` to disable
+   -  비활성화하려면 ``1.0`` 으로 설정하십시오.
 
-   -  **참고**: to enable this, you need to set ``bagging_freq`` and ``pos_bagging_fraction`` as well
+   -  **참고**: 이를 사용하기 위해 ``bagging_freq`` 와 ``pos_bagging_fraction`` 도 설정해야 합니다.
 
-   -  **참고**: if both ``pos_bagging_fraction`` and ``neg_bagging_fraction`` are set to ``1.0``,  balanced bagging is disabled
+   -  **참고**: 만약 ``pos_bagging_fraction`` 와 ``neg_bagging_fraction`` 가 모두 ``1.0`` 으로 설정되면, 균형잡힌 배깅(balanced bagging)은 비활성화됩니다.
 
-   -  **참고**: if balanced bagging is enabled, ``bagging_fraction`` will be ignored
+   -  **참고**: 만약 균형잡힌 배깅이 사용될 경우, ``bagging_fraction`` 은 무시됩니다.
 
--  ``bagging_freq`` :raw-html:`<a id="bagging_freq" title="Permalink to this parameter" href="#bagging_freq">&#x1F517;&#xFE0E;</a>`, 기본값 = ``0``, 타입 = int, 별칭: ``subsample_freq``
+-  ``bagging_freq`` :raw-html:`<a id="bagging_freq" title="Permalink to this parameter" href="#bagging_freq">&#x1F517;&#xFE0E;</a>`, 기본값 = ``0``, 타입 = 정수형, 별칭: ``subsample_freq``
 
-   -  frequency for bagging
+   -  배깅(Bagging) 빈도
 
-   -  ``0`` means disable bagging; ``k`` means perform bagging at every ``k`` iteration. Every ``k``-th iteration, LightGBM will randomly select ``bagging_fraction * 100 %`` of the data to use for the next ``k`` iterations
+   -  ``0`` 은 배깅을 사용하지 않음을 의미합니다. ``k`` 는 매 ``k`` 회의 반복마다 배깅을 수행함을 의미합니다. 매 ``k`` 번째 반복마다, LightGBM은 다음 ``k`` 회의 반복에 사용될 데이터의 ``bagging_fraction * 100 %`` 만큼을 무작위로 선택할 것입니다.
 
-   -  **참고**: to enable bagging, ``bagging_fraction`` should be set to value smaller than ``1.0`` as well
+   -  **참고**: 배깅을 사용하기 위해, ``bagging_fraction`` 또한 ``1.0`` 보다 작은 값으로 세팅해야 합니다.
 
--  ``bagging_seed`` :raw-html:`<a id="bagging_seed" title="Permalink to this parameter" href="#bagging_seed">&#x1F517;&#xFE0E;</a>`, 기본값 = ``3``, 타입 = int, 별칭: ``bagging_fraction_seed``
+-  ``bagging_seed`` :raw-html:`<a id="bagging_seed" title="Permalink to this parameter" href="#bagging_seed">&#x1F517;&#xFE0E;</a>`, 기본값 = ``3``, 타입 = 정수형, 별칭: ``bagging_fraction_seed``
 
-   -  random seed for bagging
+   -  배깅(Bagging)에 사용되는 무작위 시드
 
--  ``feature_fraction`` :raw-html:`<a id="feature_fraction" title="Permalink to this parameter" href="#feature_fraction">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1.0``, 타입 = double, 별칭: ``sub_feature``, ``colsample_bytree``, constraints: ``0.0 < feature_fraction <= 1.0``
+-  ``feature_fraction`` :raw-html:`<a id="feature_fraction" title="Permalink to this parameter" href="#feature_fraction">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1.0``, 타입 = 부동 소숫점(double), 별칭: ``sub_feature``, ``colsample_bytree``, 제약 조건: ``0.0 < feature_fraction <= 1.0``
 
-   -  LightGBM will randomly select a subset of features on each iteration (tree) if ``feature_fraction`` is smaller than ``1.0``. For example, if you set it to ``0.8``, LightGBM will select 80% of features before training each tree
+   -  ``feature_fraction``이 ``1.0``보다 작으면 LightGBM은 매 반복(트리)마다 변수의 일부를 무작위로 선택합니다. 예를 들어, ``0.8``로 설정하면 LightGBM은 각 트리를 학습하기 전에 변수의 80%를 선택합니다.
 
-   -  can be used to speed up training
+   -  학습 속도를 높이기 위해 사용됩니다.
 
-   -  can be used to deal with over-fitting
+   -  과적합(over-fitting)을 방지하기 위해 사용됩니다.
 
--  ``feature_fraction_bynode`` :raw-html:`<a id="feature_fraction_bynode" title="Permalink to this parameter" href="#feature_fraction_bynode">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1.0``, 타입 = double, 별칭: ``sub_feature_bynode``, ``colsample_bynode``, constraints: ``0.0 < feature_fraction_bynode <= 1.0``
+-  ``feature_fraction_bynode`` :raw-html:`<a id="feature_fraction_bynode" title="Permalink to this parameter" href="#feature_fraction_bynode">&#x1F517;&#xFE0E;</a>`, 기본값 = ``1.0``, 타입 = 부동 소숫점(double), 별칭: ``sub_feature_bynode``, ``colsample_bynode``, 제약 조건: ``0.0 < feature_fraction_bynode <= 1.0``
 
-   -  LightGBM will randomly select a subset of features on each tree node if ``feature_fraction_bynode`` is smaller than ``1.0``. For example, if you set it to ``0.8``, LightGBM will select 80% of features at each tree node
+   -  ``feature_fraction_bynode`` 가 ``1.0`` 보다 작으면 LightGBM은 각 트리의 노드마다 변수의 일부를 무작위로 선택합니다. 예를 들어, ``0.8`` 로 설정하면 LightGBM은 각 트리의 노드마다 변수의 80%를 선택합니다.
 
-   -  can be used to deal with over-fitting
+   -  과적합(over-fitting)을 방지하기 위해 사용됩니다.
 
-   -  **참고**: unlike ``feature_fraction``, this cannot speed up training
+   -  **참고**: ``feature_fraction`` 와 달리 훈련 속도를 높이지 않습니다.
 
-   -  **참고**: if both ``feature_fraction`` and ``feature_fraction_bynode`` are smaller than ``1.0``, the final fraction of each node is ``feature_fraction * feature_fraction_bynode``
+   -  **참고**: ``feature_fraction`` 와 ``feature_fraction_bynode`` 가 모두 ``1.0`` 보다 작으면 각 노드의 최종 비율은 ``feature_fraction * feature_fraction_bynode`` 가 됩니다.
 
--  ``feature_fraction_seed`` :raw-html:`<a id="feature_fraction_seed" title="Permalink to this parameter" href="#feature_fraction_seed">&#x1F517;&#xFE0E;</a>`, 기본값 = ``2``, 타입 = int
+-  ``feature_fraction_seed`` :raw-html:`<a id="feature_fraction_seed" title="Permalink to this parameter" href="#feature_fraction_seed">&#x1F517;&#xFE0E;</a>`, 기본값 = ``2``, 타입 = 정수형
 
-   -  random seed for ``feature_fraction``
+   -  ``feature_fraction`` 에 사용되는 무작위 시드
 
--  ``extra_trees`` :raw-html:`<a id="extra_trees" title="Permalink to this parameter" href="#extra_trees">&#x1F517;&#xFE0E;</a>`, 기본값 = ``false``, 타입 = bool, 별칭: ``extra_tree``
+-  ``extra_trees`` :raw-html:`<a id="extra_trees" title="Permalink to this parameter" href="#extra_trees">&#x1F517;&#xFE0E;</a>`, 기본값 = ``false``, 타입 = 부울, 별칭: ``extra_tree``
 
-   -  use extremely randomized trees
+   -  매우 무작위적인 트리를 사용합니다.
 
-   -  if set to ``true``, when evaluating node splits LightGBM will check only one randomly-chosen threshold for each feature
+   -  ``true`` 로 설정하면, 노드의 분할을 계산할 때 LightGBM은 각 변수에 대해 임의로 선택한 임계값(threshold) 하나만 확인합니다.
 
-   -  can be used to speed up training
+   -  학습 속도를 높이기 위해 사용됩니다.
 
-   -  can be used to deal with over-fitting
+   -  과적합(over-fitting)을 방지하기 위해 사용됩니다.
 
--  ``extra_seed`` :raw-html:`<a id="extra_seed" title="Permalink to this parameter" href="#extra_seed">&#x1F517;&#xFE0E;</a>`, 기본값 = ``6``, 타입 = int
+-  ``extra_seed`` :raw-html:`<a id="extra_seed" title="Permalink to this parameter" href="#extra_seed">&#x1F517;&#xFE0E;</a>`, 기본값 = ``6``, 타입 = 정수형
 
-   -  random seed for selecting thresholds when ``extra_trees`` is true
+   -  ``extra_trees`` 가 true일 때 임계값(thresholds)을 선택하기 위한 무작위 시드(random seed)
 
--  ``early_stopping_round`` :raw-html:`<a id="early_stopping_round" title="Permalink to this parameter" href="#early_stopping_round">&#x1F517;&#xFE0E;</a>`, 기본값 = ``0``, 타입 = int, 별칭: ``early_stopping_rounds``, ``early_stopping``, ``n_iter_no_change``
+-  ``early_stopping_round`` :raw-html:`<a id="early_stopping_round" title="Permalink to this parameter" href="#early_stopping_round">&#x1F517;&#xFE0E;</a>`, 기본값 = ``0``, 타입 = 정수형, 별칭: ``early_stopping_rounds``, ``early_stopping``, ``n_iter_no_change``
 
-   -  will stop training if one metric of one validation data doesn't improve in last ``early_stopping_round`` rounds
+   -  만약 검증 데이터의 평가지표(Metric)가 이전 ``early_stopping_round`` 라운드보다 개선되지 않으면 학습을 멈춥니다.
 
-   -  ``<= 0`` means disable
+   -  ``<= 0`` 은 비활성화를 의미합니다.
 
-   -  can be used to speed up training
+   -  학습 속도를 높이기 위해 사용됩니다.
 
--  ``first_metric_only`` :raw-html:`<a id="first_metric_only" title="Permalink to this parameter" href="#first_metric_only">&#x1F517;&#xFE0E;</a>`, 기본값 = ``false``, 타입 = bool
+-  ``first_metric_only`` :raw-html:`<a id="first_metric_only" title="Permalink to this parameter" href="#first_metric_only">&#x1F517;&#xFE0E;</a>`, 기본값 = ``false``, 타입 = 부울
 
-   -  LightGBM allows you to provide multiple evaluation metrics. Set this to ``true``, if you want to use only the first metric for early stopping
+   -  LightGBM은 다양한 평가지표(Metric)를 제공합니다. 조기 학습 종료(early stopping)를 위한 첫 번째 평가지표만 사용하려면 이 값을 ``true``로 설정하세요.
 
--  ``max_delta_step`` :raw-html:`<a id="max_delta_step" title="Permalink to this parameter" href="#max_delta_step">&#x1F517;&#xFE0E;</a>`, 기본값 = ``0.0``, 타입 = double, 별칭: ``max_tree_output``, ``max_leaf_output``
+-  ``max_delta_step`` :raw-html:`<a id="max_delta_step" title="Permalink to this parameter" href="#max_delta_step">&#x1F517;&#xFE0E;</a>`, 기본값 = ``0.0``, 타입 = 부동 소숫점(double), 별칭: ``max_tree_output``, ``max_leaf_output``
 
-   -  used to limit the max output of tree leaves
+   -  트리의 리프(leaf)의 최대 결과값을 제한하기 위해 사용됩니다.
 
    -  ``<= 0`` means no constraint
 
